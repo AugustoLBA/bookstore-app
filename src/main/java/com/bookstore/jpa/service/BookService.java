@@ -38,6 +38,6 @@ public class BookService {
         review.setBook(book);
         review.setComment(recordDTO.reviewComment());
         book.setReview(review);
-        return book;
+        return bookRepository.save(book);
     }
 }
