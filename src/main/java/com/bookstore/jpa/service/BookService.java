@@ -1,6 +1,7 @@
 package com.bookstore.jpa.service;
 
 import com.bookstore.jpa.dtos.BookRecordDTO;
+import com.bookstore.jpa.models.AuthorModel;
 import com.bookstore.jpa.models.BookModel;
 import com.bookstore.jpa.models.ReviewModel;
 import com.bookstore.jpa.repositories.AuthorRepository;
@@ -11,6 +12,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Set;
 import java.util.stream.Collectors;
 
 @Service
