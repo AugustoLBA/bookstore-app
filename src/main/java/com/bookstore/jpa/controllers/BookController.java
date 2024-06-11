@@ -3,6 +3,7 @@ package com.bookstore.jpa.controllers;
 import com.bookstore.jpa.dtos.BookRecordDTO;
 import com.bookstore.jpa.models.BookModel;
 import com.bookstore.jpa.service.BookService;
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -20,7 +21,7 @@ public class BookController {
         this.bookService = bookService;
     }
     @PostMapping
-    public ResponseEntity<BookModel> saveBook(@RequestBody BookRecordDTO recordDTO){
+    public ResponseEntity<BookModel> saveBook(@RequestBody @Valid BookRecordDTO recordDTO){
         return ResponseEntity.status(HttpStatus.CREATED).body(bookService.saveBook(recordDTO));
     }
 }
